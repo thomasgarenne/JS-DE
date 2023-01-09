@@ -13,9 +13,11 @@ const diceContain = document.getElementById('dice-contain');
 
 //VARIABLES
 let currentScore = 0;
+let totalScore = 0;
 
 //EVENT
 dice.addEventListener('click', score);
+hold.addEventListener('click', saveScore);
 
 //FUNCTION
 function randomNb(){
@@ -32,4 +34,13 @@ function score(){
         currentScore = 0;
     }
     current1.innerHTML = currentScore;
+    hold.style.pointerEvents = "";
+}
+
+function saveScore (){
+    totalScore = totalScore + currentScore;
+    total1.innerHTML = totalScore;
+    currentScore = 0;
+    current1.innerHTML = currentScore;
+    hold.style.pointerEvents = "none";
 }
