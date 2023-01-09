@@ -17,7 +17,7 @@ const dice = document.getElementById('dice');
 const hold = document.getElementById('hold');
 
 //DE
-const diceContain = document.getElementById('dice-contain');
+const diceContain = document.getElementById('diceContain');
 
 //VARIABLES
 let currentScore = 0;
@@ -29,7 +29,7 @@ let nbPlayer = 1;
 
 //EVENT
 dice.addEventListener('click', scores);
-hold.addEventListener('click', saveScores);
+hold.addEventListener('click', beginGame);
 newGame.addEventListener('click', reset);
 addPlayer.addEventListener('click', () => {
     two.classList.remove('hidden')
@@ -39,7 +39,7 @@ addPlayer.addEventListener('click', () => {
 
 //FUNCTION GENERALE
 function randomNb(){
-    return Math.floor((Math.random()*6) + 1);
+   return Math.floor((Math.random()*6) + 1);
 }
 
 function winning(){
@@ -72,13 +72,25 @@ function reset(){
     
     active1.classList.remove('active1')
     active2.classList.remove('active2')
-    two.classList.add('hidden')
-    
+    for(let i = 0; i <= 6; i++){
+        diceContain.classList.remove('dice'+ i)
+    }
+    diceContain.classList.add('dice1')
+    two.classList.add('hidden')   
 }
 
 function scores(){
-    let de = randomNb();
+    let de = randomNb()
+
+    for(let i = 0; i <= 6; i++){
+        diceContain.classList.remove('dice'+ i)
+        if(i == de){
+            diceContain.classList.add('dice' + i)
+        }
+    }
+    //diceContain.innerHTML = de;
     console.log(de)
+   
     if(de !== 1){
         currentScore = currentScore + de;
         
@@ -97,7 +109,6 @@ function scores(){
     } else {
         current1.innerHTML = currentScore;
     }
-    
     hold.style.pointerEvents = "";
     addPlayer.style.visibility = 'hidden';
 }

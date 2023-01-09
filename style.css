@@ -22,13 +22,33 @@ h2{
     justify-content: space-evenly;
 }
 
-/* Display Player */
-#dice-contain {
+#diceContain {
     width: 100px;
     height: 100px;
-    box-shadow: 2px 2px 20px black;
+    box-shadow: 2px 2px 10px black;
+    font-size: 80px;
 }
 
+.dice1{
+    background-image: url(/image/1.png);
+}
+.dice2{
+    background-image: url(/image/2.png);
+}
+.dice3{
+    background-image: url(/image/3.png);
+}
+.dice4{
+    background-image: url(/image/4.png);
+}
+.dice5{
+    background-image: url(/image/5.png);
+}
+.dice6{
+    background-image: url(/image/6.png);
+}
+
+/* Display Player */
 .display {
     text-align: center;
     width: 50vw;
@@ -40,11 +60,11 @@ h2{
 }
 
 #one {
-    background: lightgray;
+    background: #f7f7f7;
 }
 
 #two {
-    background: #f1f1f1;
+    background: #ffffff;
 }
 
 /* visuel active */
@@ -54,7 +74,7 @@ h2{
     left : 40%;
     width: 15px;
     height: 15px;
-    background-color: red;
+    background-color: #eb4d4c;
     border-radius: 50%;
 }
 
@@ -64,6 +84,6 @@ h2{
     right : 40%;
     width: 15px;
     height: 15px;
-    background-color: red;
+    background-color: #eb4d4c;
     border-radius: 50%;
 }
