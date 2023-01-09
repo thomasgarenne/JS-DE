@@ -5,11 +5,16 @@ const total2 = document.getElementById('total2');
 const current1 = document.getElementById('current1');
 const current2 = document.getElementById('current2');
 
+const active1 = document.getElementById('active1');
+const active2 = document.getElementById('active2');
+
+//BUTTON
 const addPlayer = document.getElementById('addPlayer');
 const newGame = document.getElementById('newGame');
 const dice = document.getElementById('dice');
 const hold = document.getElementById('hold');
 
+//DE
 const diceContain = document.getElementById('dice-contain');
 
 //VARIABLES
@@ -64,6 +69,7 @@ function saveScore (){
     hold.style.pointerEvents = "none";
     winning();
     i++
+    player();
 }
 
 function winning(){
@@ -90,13 +96,18 @@ function reset(){
     total1.innerText = '0';
     total2.innerText = '0';
     i = 0;
+    active1.classList.remove('active1')
+    active2.classList.remove('active2')
 }
 
 function player(){
     if(i % 2 == 0){
         activePlayer = 'player1';
-        
+        active1.classList.add('active1')
+        active2.classList.remove('active2')
     } else {
         activePlayer = 'player2';
+        active1.classList.remove('active1')
+        active2.classList.add('active2')
     }
 }
