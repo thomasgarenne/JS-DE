@@ -14,10 +14,12 @@ const diceContain = document.getElementById('dice-contain');
 //VARIABLES
 let currentScore = 0;
 let totalScore = 0;
+let nbUp = 10;
 
 //EVENT
 dice.addEventListener('click', score);
 hold.addEventListener('click', saveScore);
+newGame.addEventListener('click', reset);
 
 //FUNCTION
 function randomNb(){
@@ -43,4 +45,21 @@ function saveScore (){
     currentScore = 0;
     current1.innerHTML = currentScore;
     hold.style.pointerEvents = "none";
+    winning(nbUp);
+}
+
+function winning(nbUp){
+    if(totalScore >= nbUp){
+        alert('victoire !!!');
+        dice.style.visibility = 'hidden';
+        hold.style.visibility = 'hidden';
+    }
+}
+
+function reset(){
+    totalScore = 0;
+    currentScore = 0;
+    dice.style.visibility = '';
+    hold.style.visibility = '';
+    total1.innerText = '0';
 }
