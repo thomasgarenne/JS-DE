@@ -5,6 +5,7 @@ const total2 = document.getElementById('total2');
 const current1 = document.getElementById('current1');
 const current2 = document.getElementById('current2');
 
+const addPlayer = document.getElementById('addPlayer');
 const newGame = document.getElementById('newGame');
 const dice = document.getElementById('dice');
 const hold = document.getElementById('hold');
@@ -13,8 +14,10 @@ const diceContain = document.getElementById('dice-contain');
 
 //VARIABLES
 let currentScore = 0;
-let totalScore = 0;
-let nbUp = 10;
+let totalScore1 = 0;
+let totalScore2 = 0;
+let activePlayer;
+let i = 0;
 
 //EVENT
 dice.addEventListener('click', score);
@@ -34,32 +37,66 @@ function score(){
         
     } else {
         currentScore = 0;
+        i++;
     }
-    current1.innerHTML = currentScore;
+
+    player();
+
+    if(activePlayer == 'player1'){
+        current1.innerHTML = currentScore;
+    } else {
+        current2.innerHTML = currentScore;
+    }
     hold.style.pointerEvents = "";
 }
 
 function saveScore (){
-    totalScore = totalScore + currentScore;
-    total1.innerHTML = totalScore;
+    if(activePlayer == 'player1'){
+        totalScore1 = totalScore1 + currentScore;
+        total1.innerHTML = totalScore1;
+    } else {
+        totalScore2 = totalScore2 + currentScore;
+        total2.innerHTML = totalScore2;
+    }
     currentScore = 0;
     current1.innerHTML = currentScore;
+    current2.innerHTML = currentScore;
     hold.style.pointerEvents = "none";
-    winning(nbUp);
+    winning();
+    i++
 }
 
-function winning(nbUp){
-    if(totalScore >= nbUp){
-        alert('victoire !!!');
+function winning(){
+    if(totalScore1 >= 100){
+        console.log(totalScore1);
+        console.log('victoire joueur 1 !!!');
+        dice.style.visibility = 'hidden';
+        hold.style.visibility = 'hidden';
+
+    } else if (totalScore2 >= 100){
+        console.log(totalScore2);
+        console.log('victoire joueur 2 !!!');
         dice.style.visibility = 'hidden';
         hold.style.visibility = 'hidden';
     }
 }
 
 function reset(){
-    totalScore = 0;
+    totalScore1 = 0;
+    totalScore2 = 0;
     currentScore = 0;
     dice.style.visibility = '';
     hold.style.visibility = '';
     total1.innerText = '0';
+    total2.innerText = '0';
+    i = 0;
+}
+
+function player(){
+    if(i % 2 == 0){
+        activePlayer = 'player1';
+        
+    } else {
+        activePlayer = 'player2';
+    }
 }
