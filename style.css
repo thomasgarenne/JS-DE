@@ -14,11 +14,12 @@ h2{
 /* Menu */
 .menu {
     position: absolute;
-    top: 50%;
+    height: 100vh;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 /* Display Player */
