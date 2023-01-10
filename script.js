@@ -8,7 +8,7 @@ const current2 = document.getElementById('current2');
 const active1 = document.getElementById('active1');
 const active2 = document.getElementById('active2');
 
-const two = document.getElementById('two');
+const two = document.getElementById('display2');
 
 //BUTTON
 const addPlayer = document.getElementById('addPlayer');
@@ -34,7 +34,6 @@ newGame.addEventListener('click', reset);
 addPlayer.addEventListener('click', () => {
     two.classList.remove('hidden')
     nbPlayer ++;
-   // addPlayer.style.visibility = 'hidden';
     addPlayer.style.display = 'none';
 })
 
@@ -67,7 +66,6 @@ function reset(){
 
     dice.style.visibility = '';
     hold.style.visibility = '';
-    //addPlayer.style.visibility = '';
     addPlayer.style.display = 'block';
     total1.innerText = '0';
     total2.innerText = '0';
@@ -116,7 +114,6 @@ function scores(){
     }
 
     hold.style.pointerEvents = "";
-    //addPlayer.style.visibility = 'hidden';
     addPlayer.style.display = 'none';
 }
 
