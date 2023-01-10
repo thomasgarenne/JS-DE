@@ -6,6 +6,8 @@
     background-color: #f1f1f1;
 }
 
+
+
 .total {
     font-size: 5rem;
 }
@@ -16,8 +18,6 @@
 
 .current {
     background-color: #eb4d4c;
-    min-height: 20%;
-    min-width: 100px;
     border-radius: 5px;
 }
 
