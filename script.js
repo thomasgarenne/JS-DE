@@ -19,11 +19,13 @@ const newGame = document.getElementById('newGame');
 const dice = document.getElementById('dice');
 const hold = document.getElementById('hold');
 
+const music = document.getElementById('audio')
+
 //DE
 const diceContain = document.getElementById('diceContain');
 
 //VARIABLES
-let nbUp = 10;
+let nbUp = 20;
 let currentScore = 0;
 let totalScore1 = 0;
 let totalScore2 = 0;
@@ -58,8 +60,10 @@ function winning(){
     if(totalScore1 >= nbUp){
         dice.style.visibility = 'hidden';
         hold.style.visibility = 'hidden';
+        alert('PLAYER 1 WIN !');
 
     } else if (totalScore2 >= nbUp){
+        alert('PLAYER 2 WIN !');
         dice.style.visibility = 'hidden';
         hold.style.visibility = 'hidden';
     }
