@@ -16,13 +16,14 @@
 
 .current {
     background-color: #eb4d4c;
-    margin: 0px 25%;
+    min-height: 20%;
+    min-width: 100px;
     border-radius: 5px;
 }
 
 .current span{
     color: white;
-    font-size: 1.5rem;
+    font-size: 50px;
 }
 
 #menu {
