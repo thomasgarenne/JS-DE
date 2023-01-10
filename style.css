@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Lato';
 }
 
 section {
@@ -9,7 +10,7 @@ section {
 
 h2{
     font-size: 2rem;
-    margin-top: 5rem;
+    margin-top: 7rem;
  }
 
 /* Menu */
@@ -19,6 +20,7 @@ h2{
     cursor: pointer;
     background-color: transparent;
     font-size: 1rem;
+    font-family: 'Lato'
  }
 
  button:hover{
@@ -120,8 +122,8 @@ span {
 /* visuel active */
 .active1 {
     position: absolute;
-    top: 18%;
-    left : 35%;
+    top: 20%;
+    left : 40%;
     width: 15px;
     height: 15px;
     background-color: #eb4d4c;
@@ -130,8 +132,8 @@ span {
 
 .active2 {
     position: absolute;
-    top: 18%;
-    right : 35%;
+    top: 20%;
+    right : 40%;
     width: 15px;
     height: 15px;
     background-color: #eb4d4c;

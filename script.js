@@ -34,7 +34,8 @@ newGame.addEventListener('click', reset);
 addPlayer.addEventListener('click', () => {
     two.classList.remove('hidden')
     nbPlayer ++;
-    addPlayer.style.visibility = 'hidden';
+   // addPlayer.style.visibility = 'hidden';
+    addPlayer.style.display = 'none';
 })
 
 //FUNCTION GENERALE
@@ -66,7 +67,8 @@ function reset(){
 
     dice.style.visibility = '';
     hold.style.visibility = '';
-    addPlayer.style.visibility = '';
+    //addPlayer.style.visibility = '';
+    addPlayer.style.display = 'block';
     total1.innerText = '0';
     total2.innerText = '0';
     current1.innerText = '0';
@@ -114,7 +116,8 @@ function scores(){
     }
 
     hold.style.pointerEvents = "";
-    addPlayer.style.visibility = 'hidden';
+    //addPlayer.style.visibility = 'hidden';
+    addPlayer.style.display = 'none';
 }
 
 function saveScores (){
