@@ -8,6 +8,9 @@ const current2 = document.getElementById('current2');
 const active1 = document.getElementById('active1');
 const active2 = document.getElementById('active2');
 
+const player1 = document.getElementById('player1');
+const player2 = document.getElementById('player2');
+
 const two = document.getElementById('display2');
 
 //BUTTON
@@ -20,6 +23,7 @@ const hold = document.getElementById('hold');
 const diceContain = document.getElementById('diceContain');
 
 //VARIABLES
+let nbUp = 10;
 let currentScore = 0;
 let totalScore1 = 0;
 let totalScore2 = 0;
@@ -37,21 +41,25 @@ addPlayer.addEventListener('click', () => {
     addPlayer.style.display = 'none';
 })
 
+//ANIMATION
+function roll(){
+    diceContain.classList.add('shake');
+    setTimeout(function(){
+        diceContain.classList.remove('shake')
+    }, 1000)
+}
+
 //FUNCTION GENERALE
 function randomNb(){
    return Math.floor((Math.random()*6) + 1);
 }
 
 function winning(){
-    if(totalScore1 >= 100){
-        console.log(totalScore1);
-        console.log('victoire joueur 1 !!!');
+    if(totalScore1 >= nbUp){
         dice.style.visibility = 'hidden';
         hold.style.visibility = 'hidden';
 
-    } else if (totalScore2 >= 100){
-        console.log(totalScore2);
-        console.log('victoire joueur 2 !!!');
+    } else if (totalScore2 >= nbUp){
         dice.style.visibility = 'hidden';
         hold.style.visibility = 'hidden';
     }
@@ -71,7 +79,6 @@ function reset(){
     total2.innerText = '0';
     current1.innerText = '0';
     current2.innerText = '0';
-
     active1.classList.remove('active1')
     active2.classList.remove('active2')
     for(let i = 0; i <= 6; i++){
@@ -82,7 +89,8 @@ function reset(){
 }
 
 function scores(){
-    let de = randomNb()
+    roll()
+    de = randomNb()
 
     for(let i = 0; i <= 6; i++){
         diceContain.classList.remove('dice'+ i)
