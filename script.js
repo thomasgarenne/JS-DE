@@ -69,7 +69,9 @@ function reset(){
     addPlayer.style.visibility = '';
     total1.innerText = '0';
     total2.innerText = '0';
-    
+    current1.innerText = '0';
+    current2.innerText = '0';
+
     active1.classList.remove('active1')
     active2.classList.remove('active2')
     for(let i = 0; i <= 6; i++){
@@ -88,14 +90,13 @@ function scores(){
             diceContain.classList.add('dice' + i)
         }
     }
-    //diceContain.innerHTML = de;
-    console.log(de)
    
     if(de !== 1){
-        currentScore = currentScore + de;
-        
+        currentScore = currentScore + de;  
     } else {
-        currentScore = 0;
+        currentScore = 0; 
+        current1.innerHTML = currentScore;
+        current2.innerHTML = currentScore;
         i++;
     }
 
@@ -103,12 +104,15 @@ function scores(){
         player();
         if(activePlayer == 'player1'){
             current1.innerHTML = currentScore;
+            console.log(currentScore)
         } else {
             current2.innerHTML = currentScore;
+            console.log(currentScore)
         }
     } else {
         current1.innerHTML = currentScore;
     }
+
     hold.style.pointerEvents = "";
     addPlayer.style.visibility = 'hidden';
 }
@@ -128,6 +132,7 @@ function saveScores (){
         hold.style.pointerEvents = "none";
         i++
         player();
+
     } else {
         totalScore1 = totalScore1 + currentScore;
         total1.innerHTML = totalScore1;
@@ -135,7 +140,6 @@ function saveScores (){
         current1.innerHTML = currentScore;
         hold.style.pointerEvents = "none";
     }
-    
 }
 
 function player(){
