@@ -12,6 +12,8 @@ h2{
     margin-top: 5rem;
  }
 
+/* Menu */
+
  button {
     border: none;
     cursor: pointer;
@@ -23,7 +25,6 @@ h2{
     transform: scale(1.2);
  }
 
-/* Menu */
 .menu {
     position: absolute;
     height: 100vh;
@@ -59,6 +60,11 @@ h2{
 }
 .dice6{
     background-image: url(/image/6.png);
+}
+
+svg {
+    color: #eb4d4c;
+    padding-right: 5px;
 }
 
 /* Display Player */
