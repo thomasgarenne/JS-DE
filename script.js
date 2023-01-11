@@ -25,7 +25,7 @@ const music = document.getElementById('audio')
 const diceContain = document.getElementById('diceContain');
 
 //VARIABLES
-let nbUp = 20;
+let nbUp = 100;
 let currentScore = 0;
 let totalScore1 = 0;
 let totalScore2 = 0;
